@@ -1,3 +1,4 @@
+import { OutfitEditPage } from './../pages/outfit-edit/outfit-edit';
 import { ClothesService } from './../services/clothes.service';
 import { WardrobeService } from './../services/wardrobe.service';
 import { WardrobePage } from './../pages/wardrobe/wardrobe';
@@ -43,6 +44,7 @@ export function getAuthHttp(http, options: RequestOptions) {
     LandingPage,
     WardrobePage,
     OutfitPage,
+    OutfitEditPage,
     BusinessCasualMaleSvgComponent
   ],
   imports: [
@@ -62,6 +64,7 @@ export function getAuthHttp(http, options: RequestOptions) {
     LandingPage,
     WardrobePage,
     OutfitPage,
+    OutfitEditPage
   ],
   providers: [
     StatusBar,

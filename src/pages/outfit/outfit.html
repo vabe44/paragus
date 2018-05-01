@@ -2,6 +2,11 @@
 
   <ion-navbar>
     <ion-title>{{ outfit.name }}</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="onEditOutfit()">
+        Edit
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>

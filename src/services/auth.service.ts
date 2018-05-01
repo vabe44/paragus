@@ -1,15 +1,15 @@
-import { Injectable, EventEmitter, Output } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { tokenNotExpired, JwtHelper } from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 import config from '../config/config';
+import { Events } from 'ionic-angular';
 
 @Injectable()
 export class AuthService {
   currentUser: any;
-  @Output() loggedOut: EventEmitter<any> = new EventEmitter();
 
-  constructor(private http: Http) {
+  constructor(private http: Http, public events: Events) {
     const token = localStorage.getItem('token');
     if (token) {
       const jwt = new JwtHelper();
@@ -36,7 +36,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');
     this.currentUser = null;
-    this.loggedOut.emit(true);
+    this.events.publish('user:logout', this.currentUser, Date.now());
   }
 
   isLoggedIn() {
