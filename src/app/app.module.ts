@@ -1,7 +1,15 @@
+import { AuthService } from './../services/auth.service';
+import { BusinessCasualMaleSvgComponent } from './../components/business-casual-male-svg/business-casual-male-svg.component';
+import { SignupPage } from './../pages/signup/signup';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+
+import { AuthHttp, AuthConfig } from 'angular2-jwt/angular2-jwt';
+import { BrowserXhr, RequestOptions } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
+import { CustExtBrowserXhr } from '../cust-ext-browser-xhr';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -10,6 +18,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginPage } from '../pages/login/login';
+
+export function getAuthHttp(http, options: RequestOptions) {
+  return new AuthHttp(new AuthConfig({
+    tokenName: 'token'
+  }), http);
+}
 
 @NgModule({
   declarations: [
@@ -17,10 +32,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SignupPage,
+    BusinessCasualMaleSvgComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -29,12 +48,23 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    AuthService,
+    AuthHttp,
+    {
+      provide: AuthHttp,
+      useFactory: getAuthHttp,
+      deps: [Http, RequestOptions]
+    },
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    // CORS
+    {provide: BrowserXhr, useClass: CustExtBrowserXhr},
   ]
 })
 export class AppModule {}
