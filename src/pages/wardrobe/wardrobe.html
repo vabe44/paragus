@@ -3,7 +3,7 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let outfit of outfits" col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2>
-        <ion-card>
+        <ion-card (click)="loadOutfit(outfit)">
           <ion-row>
             <ion-col col-6 offset-3>
               <app-business-casual-male-svg [outfit]="outfit"></app-business-casual-male-svg>

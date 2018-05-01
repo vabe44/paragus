@@ -1,3 +1,5 @@
+import { IOutfit } from './../../interfaces/Outfit';
+import { OutfitPage } from './../outfit/outfit';
 import { WardrobeService } from './../../services/wardrobe.service';
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -18,4 +20,7 @@ export class WardrobePage implements OnInit {
       .subscribe(outfits => this.outfits = outfits);
   }
 
+  loadOutfit(outfit: IOutfit) {
+    this.navCtrl.push(OutfitPage, outfit);
+  }
 }
