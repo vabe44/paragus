@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Http } from '@angular/http';
 import { tokenNotExpired, JwtHelper } from 'angular2-jwt';
 import 'rxjs/add/operator/map';
@@ -7,6 +7,7 @@ import config from '../config/config';
 @Injectable()
 export class AuthService {
   currentUser: any;
+  @Output() loggedOut: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: Http) {
     const token = localStorage.getItem('token');
@@ -35,6 +36,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');
     this.currentUser = null;
+    this.loggedOut.emit(true);
   }
 
   isLoggedIn() {

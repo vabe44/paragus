@@ -1,4 +1,4 @@
 export default {
-    serverUrl: 'http://localhost:3200/',
-    serverApiUrl: 'http://localhost:3200/api/',
+    serverUrl: 'http://localhost:3002',
+    serverApiUrl: 'http://localhost:3002',
 }

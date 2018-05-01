@@ -1,3 +1,6 @@
+import { ClothesService } from './../services/clothes.service';
+import { WardrobeService } from './../services/wardrobe.service';
+import { WardrobePage } from './../pages/wardrobe/wardrobe';
 import { AuthService } from './../services/auth.service';
 import { BusinessCasualMaleSvgComponent } from './../components/business-casual-male-svg/business-casual-male-svg.component';
 import { SignupPage } from './../pages/signup/signup';
@@ -19,6 +22,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
+import { LandingPage } from '../pages/landing/landing';
+import { OutfitPage } from '../pages/outfit/outfit';
 
 export function getAuthHttp(http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -35,6 +40,9 @@ export function getAuthHttp(http, options: RequestOptions) {
     TabsPage,
     LoginPage,
     SignupPage,
+    LandingPage,
+    WardrobePage,
+    OutfitPage,
     BusinessCasualMaleSvgComponent
   ],
   imports: [
@@ -50,13 +58,18 @@ export function getAuthHttp(http, options: RequestOptions) {
     HomePage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    LandingPage,
+    WardrobePage,
+    OutfitPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AuthService,
     AuthHttp,
+    WardrobeService,
+    ClothesService,
     {
       provide: AuthHttp,
       useFactory: getAuthHttp,
