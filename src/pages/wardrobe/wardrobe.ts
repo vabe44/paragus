@@ -16,6 +16,9 @@ export class WardrobePage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
     this.wardrobeService.getOutfits()
       .subscribe(outfits => this.outfits = outfits);
   }

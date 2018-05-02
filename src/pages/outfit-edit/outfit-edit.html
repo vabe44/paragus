@@ -2,6 +2,11 @@
 
   <ion-navbar>
     <ion-title>Edit {{ outfit?.name }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="deleteOutfit()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -12,7 +17,7 @@
     <ion-list>
       <ion-item>
         <ion-label fixed>Name</ion-label>
-        <ion-input type="text" id="nameInput" name="nameInput" placeholder="Name of the outfit" [(ngModel)]="outfit.name" value="{{ outfit?.name }}" required></ion-input>
+        <ion-input type="text" id="nameInput" name="nameInput" placeholder="Name of the outfit" [(ngModel)]="tempOutfit.name" value="{{ tempOutfit?.name }}" required></ion-input>
       </ion-item>
     </ion-list>
     <button ion-button block type="submit" [disabled]="f.invalid">Update</button>
