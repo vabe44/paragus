@@ -1,4 +1,4 @@
 export default {
-    serverUrl: 'http://paragus.vabe.design',
-    serverApiUrl: 'http://paragus.vabe.design',
+    serverUrl: 'https://paragus.vabe.design',
+    serverApiUrl: 'https://paragus.vabe.design',
 }
