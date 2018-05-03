@@ -1,9 +1,8 @@
 import { IOutfit } from './../../interfaces/Outfit';
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { OutfitEditPage } from '../outfit-edit/outfit-edit';
 
-@IonicPage()
 @Component({
   selector: 'page-outfit',
   templateUrl: 'outfit.html',

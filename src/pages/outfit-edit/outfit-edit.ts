@@ -1,9 +1,8 @@
 import { WardrobeService } from './../../services/wardrobe.service';
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { IOutfit } from '../../interfaces/Outfit';
 
-@IonicPage()
 @Component({
   selector: 'page-outfit-edit',
   templateUrl: 'outfit-edit.html',
