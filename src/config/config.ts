@@ -1,4 +1,4 @@
 export default {
-    serverUrl: 'http://localhost:3002',
-    serverApiUrl: 'http://localhost:3002',
+    serverUrl: 'http://paragus.vabe.design',
+    serverApiUrl: 'http://paragus.vabe.design',
 }
