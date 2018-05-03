@@ -37,7 +37,7 @@ export class LoginPage {
           loading.dismiss();
           const alert = this.alertCtrl.create({
             title: 'Signin failed!',
-            message: error,
+            message: error.message,
             buttons: ['Ok']
           });
           alert.present();

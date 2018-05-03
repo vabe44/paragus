@@ -15,8 +15,7 @@ import { BrowserXhr, RequestOptions } from '@angular/http';
 import { HttpModule, Http } from '@angular/http';
 import { CustExtBrowserXhr } from '../cust-ext-browser-xhr';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { SettingsPage } from '../pages/settings/settings';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -35,8 +34,7 @@ export function getAuthHttp(http, options: RequestOptions) {
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    SettingsPage,
     HomePage,
     TabsPage,
     LoginPage,
@@ -55,8 +53,7 @@ export function getAuthHttp(http, options: RequestOptions) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    SettingsPage,
     HomePage,
     TabsPage,
     LoginPage,
