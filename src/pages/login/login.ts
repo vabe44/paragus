@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  invalidLogin: boolean;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -28,8 +28,6 @@ export class LoginPage {
           if (result) {
             this.navCtrl.setRoot(TabsPage);
             this.navCtrl.popToRoot();
-          } else {
-            this.invalidLogin = true;
           }
           loading.dismiss();
         },
@@ -44,9 +42,4 @@ export class LoginPage {
         }
       );
   }
-
-  hideError(): void {
-    this.invalidLogin = false;
-  }
-
 }

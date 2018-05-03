@@ -9,14 +9,14 @@
     </ion-row>
   </ion-grid>
 
-  <p text-center>Please log in or sign up to continue.</p>
+  <h3 text-center>Please log in or sign up to continue.</h3>
 
   <ion-grid>
-    <ion-row>
-      <ion-col>
+    <ion-row justify-content-center>
+      <ion-col col-sm-6 col-md-4 col-lg-3 col-xl-2>
         <button ion-button block (click)="onLoad(signupPage)">Signup</button>
       </ion-col>
-      <ion-col>
+      <ion-col col-sm-6 col-md-4 col-lg-3 col-xl-2>
         <button ion-button block color="light" (click)="onLoad(loginPage)">Login</button>
       </ion-col>
     </ion-row>

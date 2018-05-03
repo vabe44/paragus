@@ -13,13 +13,25 @@
 
 
 <ion-content padding>
-  <form #f="ngForm" (ngSubmit)="updateOutfit()">
-    <ion-list>
-      <ion-item>
-        <ion-label fixed>Name</ion-label>
-        <ion-input type="text" id="nameInput" name="nameInput" placeholder="Name of the outfit" [(ngModel)]="tempOutfit.name" value="{{ tempOutfit?.name }}" required></ion-input>
-      </ion-item>
-    </ion-list>
-    <button ion-button block type="submit" [disabled]="f.invalid">Update</button>
-  </form>
+
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col col-sm-12 col-md-9 col-lg-6 col-xl-3>
+
+          <form #f="ngForm" (ngSubmit)="updateOutfit()">
+            <ion-list>
+              <ion-item>
+                <ion-label fixed>Name</ion-label>
+                <ion-input type="text" id="nameInput" name="nameInput" placeholder="Name of the outfit" [(ngModel)]="tempOutfit.name" value="{{ tempOutfit?.name }}" required></ion-input>
+              </ion-item>
+            </ion-list>
+            <button ion-button block type="submit" [disabled]="f.invalid">Update</button>
+          </form>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
 </ion-content>
